@@ -1,0 +1,130 @@
+===============================================================================
+INVENTORY MANAGEMENT SYSTEM - QUICK INSTALLATION GUIDE
+===============================================================================
+
+PREREQUISITES:
+- PHP 8.1+ with MySQL extension
+- Composer
+- MySQL 5.7+
+- Node.js 16+ and npm
+
+===============================================================================
+BACKEND INSTALLATION (Laravel)
+===============================================================================
+
+1. Open terminal and navigate to the backend folder:
+   cd backend
+
+2. Install dependencies:
+   composer install
+
+3. Generate application key:
+   php artisan key:generate
+
+4. Create MySQL database:
+   mysql -u root -p
+   CREATE DATABASE inventory_db;
+   EXIT;
+
+5. Configure database in .env file:
+   DB_DATABASE=inventory_db
+   DB_USERNAME=root
+   DB_PASSWORD=your_password
+
+6. Run migrations:
+   php artisan migrate
+
+7. (Optional) Seed default user:
+   php artisan db:seed
+   
+   Default Login:
+   Email: admin@inventory.com
+   Password: password
+
+8. Start Laravel server:
+   php artisan serve
+   
+   Backend URL: http://localhost:8000
+
+===============================================================================
+FRONTEND INSTALLATION (React)
+===============================================================================
+
+1. Open NEW terminal and navigate to frontend folder:
+   cd frontend
+
+2. Install dependencies:
+   npm install
+
+3. Start React server:
+   npm start
+   
+   Frontend URL: http://localhost:3000
+
+===============================================================================
+FIRST USE
+===============================================================================
+
+1. Open browser: http://localhost:3000
+
+2. Option A - Use seeded account:
+   Email: admin@inventory.com
+   Password: password
+
+   Option B - Register new account:
+   Click "Register" and create your account
+
+3. Start managing inventory!
+
+===============================================================================
+QUICK TEST
+===============================================================================
+
+1. Click "+ Add Item"
+2. Name: Test Item, Quantity: 10, Unit: units
+3. Click "Add Item(s)"
+4. Item appears in dashboard
+5. Click "+ Add" to increase stock
+6. Click "History" to view transactions
+
+===============================================================================
+TROUBLESHOOTING
+===============================================================================
+
+Port in use?
+- Backend: php artisan serve --port=8001
+- Frontend: PORT=3001 npm start
+
+Database connection error?
+- Check MySQL is running
+- Verify .env credentials
+- Ensure database exists
+
+CORS errors?
+- Check backend/config/cors.php
+- Restart Laravel server
+
+Can't login?
+- Clear browser localStorage (F12 > Application > Clear)
+- php artisan config:clear
+- php artisan cache:clear
+
+===============================================================================
+DOCUMENTATION
+===============================================================================
+
+README.md - Complete documentation
+SETUP_GUIDE.md - Detailed setup steps
+API_TESTING.md - API endpoint guide
+FEATURES.md - Feature documentation
+PROJECT_SUMMARY.md - Project overview
+
+===============================================================================
+SUPPORT
+===============================================================================
+
+Check documentation files for detailed information
+Review Laravel docs: laravel.com/docs
+Review React docs: react.dev
+
+===============================================================================
